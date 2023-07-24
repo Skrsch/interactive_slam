@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  git clang lld libomp-dev \
  ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs ros-noetic-rviz \
  ros-noetic-tf-conversions ros-noetic-libg2o libglm-dev libglfw3-dev \
+ zenity \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
