@@ -10,8 +10,14 @@ docker run -it \
  -e DISPLAY=$DISPLAY \
  -v $XSOCK:$XSOCK \
  -v $1:/data/ \
+ --gpus all \
  --network=host \
  --privileged \
+ -e NVIDIA_DRIVER_CAPABILITIES=all \
+ -e QT_X11_NO_MITSHM=1 \
+ --env="XAUTHORITY=$XAUTH" \
+ --volume="$XAUTH:$XAUTH" \
+ --runtime=nvidia \
  interactive_slam \
  bash
 
